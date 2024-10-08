@@ -3,12 +3,12 @@ package lv.rvt;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
-        printRectangle(17, 3);
+        printTriangle(4);
     }
 
-    public static void printRectangle(int width, int height) {
-        for (int simb = 0; simb < height; simb++) {
-        for (int strok = 0; strok < width; strok++) {
+    public static void printTriangle(int size) {
+        for (int simb = 0; size > simb; simb++) {
+        for (int strok = 0; simb+1 > strok; strok++) {
                 System.out.print("*");
             }
             System.out.println();
