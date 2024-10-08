@@ -3,18 +3,15 @@ package lv.rvt;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
-        printStars(5);
-        printStars(3);
-        printStars(9);
+        printSquare(4);;
     }
 
-    public static void printStars(int number){
+    public static void printSquare(int size){
         int times = 0;
-        while (times<number) {
-            System.out.print("*");
-            times++;
-        }
-        System.out.println();
+        for(int simb = 0; size>times;times++);
+        for(int strok = 0; strok < size;strok++);
+        System.out.println("*");
     }
+    System.out.println();
 }
     
