@@ -3,15 +3,18 @@ package lv.rvt;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
-        printSquare(4);;
+        printRectangle(17, 3);
     }
 
-    public static void printSquare(int size){
-        int times = 0;
-        for(int simb = 0; size>times;times++);
-        for(int strok = 0; strok < size;strok++);
-        System.out.println("*");
+    public static void printRectangle(int width, int height) {
+        for (int simb = 0; simb < height; simb++) {
+        for (int strok = 0; strok < width; strok++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
-    System.out.println();
 }
+
+
     
