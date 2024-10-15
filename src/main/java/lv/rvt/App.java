@@ -6,7 +6,7 @@ public class App {
         printTriangle(4);
     }
 
-    public static void printTriangle(int size) {
+    public static void printSpaces(int size) {
         for (int simb = 0; size > simb; simb++) {
         for (int strok = 0; simb+1 > strok; strok++) {
                 System.out.print("*");
