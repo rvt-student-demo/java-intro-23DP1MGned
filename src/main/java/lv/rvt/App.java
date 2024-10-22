@@ -1,20 +1,26 @@
 package lv.rvt;
-
+import java.util.ArrayList;
 import java.util.Scanner;
-public class App {
-    public static void main(String[] args) {
-        printTriangle(4);
-    }
 
-    public static void printSpaces(int size) {
-        for (int simb = 0; size > simb; simb++) {
-        for (int strok = 0; simb+1 > strok; strok++) {
-                System.out.print("*");
-            }
-            System.out.println();
+public class App {
+    public static void main(String[]args) {
+    Scanner scanner = new Scanner(System.in);
+    ArrayList<Integer> numbers = new ArrayList<>();
+        while (true) {
+        String inputsString = scanner.nextLine();
+        int input = Integer.parseInt(inputsString);
+        numbers.add(input);
+        System.out.println(numbers);    
+        if ( input == -1){
+            break;
         }
+    System.out.println("From where: ");
+    String inpString = scanner.nextLine();
+    int inputnum = Integer.parseInt(inputsString);
+    System.out.println(numbers.get(inputnum));
     }
+        
+        
 }
 
-
-    
+}
