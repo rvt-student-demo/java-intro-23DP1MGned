@@ -1,2 +1,4 @@
-id, name, password
-1, root, 123
+name, age, weight, height
+Max, 17, 72, 176
+Sergo, 17, 30, 150
+Erni, 17, 150, 250

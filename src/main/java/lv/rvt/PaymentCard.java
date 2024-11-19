@@ -10,5 +10,13 @@ public class PaymentCard {
     public String toString() {
         return "Card balance = " +balance+ " eur.";
     }
+    
+    public void eatAffordably() {
+        // write code here
+    }
+    
+    public void eatHeartily() {
+        // write code here
+    }
 }
 
