@@ -1,12 +1,22 @@
 package lv.rvt;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.util.*;
 
 public class App {
-    public static void main(String[] args) {
-        PaymentCard card = new PaymentCard(10);
-        System.out.println("Paul: " + card);
-        card.addMoney(-15);
-        System.out.println("Paul: " + card);
+    public static void main(String[] args) throws Exception {
+
+        Timer timer = new Timer();
+
+        while (true) {
+            System.out.println(timer);
+            timer.advance();
+
+            try {
+                Thread.sleep(10);
+            } catch (Exception e) {
+
+            }
+}
     }
 }
