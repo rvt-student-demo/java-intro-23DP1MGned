@@ -5,45 +5,12 @@ public class Person {
     private int age;
     private int weight;
     private int height;
-    private int shelf;
 
-    // All args class constructor
-    public Person(String name, int age, int weight, int height) {
-        this.age = age;
-        this.weight = weight;
-        this.height = height;
-        this.name = name;
-    }
-
-    // Second constructor with only one parameter
-    public Person(String name) {
-        this(name, 0, 0, 0);
-    }
-
-    public int returnAge() {
-        return this.age;
-    }
-
-    public boolean isOfLegalAge() {
-        return this.age <= 18;
-    }
-
-    // Getter un setter
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String newName) {
-        this.name = newName;
-    }
-
-    @Override
-    public String toString() {
-        return this.name + ", age " + this.age + " years";
-    }
-    
-    public void printPerson() {
-        System.out.println(this.name + ", age " + this.age + " years");
+    public Person(String initialName) {
+        this.age = 0;
+        this.weight = 0;
+        this.height = 0;
+        this.name = initialName;
     }
 
     public void setHeight(int newHeight) {
@@ -58,16 +25,27 @@ public class Person {
         double heigthPerHundred = this.height / 100.0;
         return this.weight / (heigthPerHundred * heigthPerHundred);
     }
-    
+
+    public void printPerson() {
+        System.out.println(this.name + ", age " + this.age + " years");
+    }
+
     public void growOlder() {
-        this.age = this.age + 1;
+        if (this.age < 30) {
+            this.age ++;
+        }
+    }
+
+    public String getName() {
+        return this.name;
     }
     
-    public void growOlder(int years) {
-        this.age = this.age + years;
+    public boolean isOfLegalAge() {
+        return this.age <= 18;
     }
-    
-    public String toCsvRow() {
-        return this.name + ", " + this.age + ", " + this.weight + ", " + this.height;
+
+    // the added method
+    public int returnAge() {
+        return this.age;
     }
-}   
+}
