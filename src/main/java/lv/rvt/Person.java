@@ -1,72 +1,101 @@
 package lv.rvt;
 
-public class Person {
-    private String name;
-    private int age;
-    private int weight;
-    private int height;
-
-    public Person(String name, int age, int weight, int height) {
-        this.name = name != null ? name : "Unknown";
-        this.age = age >= 0 ? age : 0; // Ensure non-negative age
-        this.weight = weight >= 0 ? weight : 0;
-        this.height = height >= 0 ? height : 0;
-    }
-
-
+public class Person { 
+    private String name; 
+    private int age; 
+    private int weight; 
+    private int height; 
+    private SimpleDate birthday;
+    private String address;
+    
+    // All args constructor
+    public Person(String name, int age, int weight, int height, String address) { 
+        this.name = name; 
+        this.age = age; 
+        this.weight = weight; 
+        this.height = height; 
+        this.address = address;
+    } 
+    
+    // Second constructor with only one parameter
     public Person(String name) {
-        this(name, 0, 0, 0); 
+        // this(name, 0, 0, 0);
+        this.name = name;
+        this.age = 0;
+        this.weight = 0;
+        this.height = 0;
     }
 
-    public String getName() {
-        return name;
+    public Person(String name, SimpleDate date) {
+        this.name = name;
+        this.birthday = date;
     }
 
-    public int getAge() {
-        return age;
+    public Person(String name, String age, String weight, String height){
+        this.name = name;
+        this.age = Integer.valueOf(age);
+        this.weight = Integer.valueOf(weight);
+        this.height = Integer.valueOf(height);
     }
 
-    public int getWeight() {
-        return weight;
+    public Person(String name, String address){
+        this(name, 0, 0, 0, address);
     }
-
-    public int getHeight() {
-        return height;
+    public void growOlder() {
+        this.age = this.age + 1;
     }
-
+    
+    public void growOlder(int years) {
+        this.age = this.age + years;
+    }
+ 
+    public boolean isOfLegalAge() { 
+        return this.age <= 18; 
+    } 
+     
+    public void printPerson() { 
+        System.out.println(this.name + ", age " + this.age + " years"); 
+    } 
+ 
+    public void setHeight(int newHeight) { 
+        this.height = newHeight; 
+    } 
+ 
+    public void setWeight(int newWeight) { 
+        this.weight = newWeight; 
+    } 
+ 
     public void setName(String newName) {
         this.name = newName;
     }
-
-    public void setHeight(int newHeight) {
-        this.height = newHeight;
-    }
-
-    public void setWeight(int newWeight) {
-        this.weight = newWeight;
-    }
-
-    @Override
-    public String toString() {
-        return this.name + ", " + this.age + ", " + this.weight + ", " + this.height;
-    }
-
-    public double bodyMassIndex() {
-        double heightInMeters = this.height / 100.0;
-        return this.weight / (heightInMeters * heightInMeters);
-    }
-
-    public void growOlder() {
-        this.age++;
-    }
-
-    public void growOlder(int years) {
-        if (years > 0) {
-            this.age += years;
-        }
-    }
+    
+    public double bodyMassIndex() { 
+        double heigthPerHundred = this.height / 100.0; 
+        return this.weight / (heigthPerHundred * heigthPerHundred); 
+    } 
 
     public String toCsvRow() {
         return this.name + ", " + this.age + ", " + this.weight + ", " + this.height;
     }
+
+    public String getName() {
+        return this.name + "'s";
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public int getWeight() {
+        return this.weight;
+    }
+
+    @Override 
+    public String toString() { 
+        return this.name + "\n\t" + this.address;
+    } 
 }
